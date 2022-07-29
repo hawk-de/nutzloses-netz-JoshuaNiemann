@@ -31,9 +31,9 @@ let highscore = 0;
 let life = 3;
 let gamewidth;
 
-let startpage = false;
+let startpage = true;
 let gameover = false;
-let ingame = true;
+let ingame = false;
 
 let infotextsize = gamewidth/30;
 
@@ -61,6 +61,7 @@ function setup(){
     textAlign(CENTER);
     imageMode(CENTER);
     colorMode(RGB, 255, 255, 255, 1);
+    textFont('verdana');
 
     
     let canvas = createCanvas(window.innerWidth, window.innerHeight-7);
@@ -150,8 +151,10 @@ function draw(){
     //scoreboard
     textAlign(CENTER);
     textSize(height/40);
-    fill(255)
-    text("score: "+ score +"     highscore: "+ localStorage.getItem('highscore') ,width/2, 0+30 );
+    fill(255);
+    textStyle(BOLD);
+    text("score | "+ score +"       highscore | "+ localStorage.getItem('highscore') ,width/2, 0+30 );
+    textStyle(NORMAL);
     textAlign(CENTER);
     fill(30,20,20)
     rect(width/2, 0+70, 160, 55, 8)
@@ -275,11 +278,13 @@ function drawstartpage(){
     const informationtext = "Shoot the target on top, but make it tricky.                        More bounces means more Points!"
     textAlign(CORNER)
     fill(0,0,0,1)
-    textSize(60)
+    textSize(55)
+    textStyle(BOLD);
     text("HOW TO", width/2, height/2.5, 300, height/2);
+    textStyle(NORMAL);
     textSize(20);
     text(informationtext, width/2, height/2, 300, height/2);
-    text("Use the Arrowkeys or Buttons LEFT / RIGHT to aim.            And the key UP or the middle Button to shoot.                       don't hit yourself!", width/2, height-250, 300, height/2);
+    text("Use the Arrowkeys or Buttons LEFT / RIGHT to aim.  And the key UP or the middle Button to shoot.                       don't hit yourself!", width/2, height-250, 300, height/2);
     text("Press to start", width/1.6, height, 300, 250);
     
      if(mouseIsPressed == true || keyIsPressed == true){
@@ -303,11 +308,16 @@ function drawgameoverpage(){
 
     rectMode(CENTER);
     noStroke()
+    fill(255)
+    textStyle(BOLD)
+    textSize(gamewidth/20)
+    text("Highscore  " + localStorage.getItem('highscore') , width/2, height/1.35)
+    textStyle(NORMAL)
     fill(20,20,20)
-    rect(width/2, height-100, gamewidth-100, 100);
-    textSize(gamewidth/10)
+    rect(width/2, height-100, gamewidth-100, 100, 30);
+    textSize(gamewidth/15)
     fill(150,50,50)
-    text("RETRY", width/2, height-75)
+    text("RETRY", width/2, height-85)
 
     if(mouseIsPressed == true &&
         mouseX >= width/2 - (gamewidth-100) &&
