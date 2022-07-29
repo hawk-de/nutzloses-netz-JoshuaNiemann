@@ -31,9 +31,9 @@ let highscore = 0;
 let life = 3;
 let gamewidth;
 
-let startpage = true;
+let startpage = false;
 let gameover = false;
-let ingame = false;
+let ingame = true;
 
 let infotextsize = gamewidth/30;
 
@@ -73,7 +73,7 @@ function setup(){
     projY = height-100;
     projSpeedX = 5;
     projSpeedY = 5;
-    wallheight = 50;
+    wallheight = 75;
     const image1 = imgLeft;
     
     newTarget()
@@ -112,9 +112,8 @@ function draw(){
 
     
     //taskbar
-    fill(100);
+    fill(30,60,70);
     rect(width/2, height, width, 200);
-
     //Wall
     rectMode(CORNER);
     rect(0, 0, width, wallheight);
@@ -152,8 +151,25 @@ function draw(){
     textAlign(CENTER);
     textSize(height/40);
     fill(255)
-    text("highscore: "+ localStorage.getItem('highscore') +"   score: "+ score +"   Lifes: "+ life ,width/2, 0+30 );
+    text("score: "+ score +"     highscore: "+ localStorage.getItem('highscore') ,width/2, 0+30 );
     textAlign(CENTER);
+    fill(30,20,20)
+    rect(width/2, 0+70, 160, 55, 8)
+    fill(60,35,35)
+    rect(width/2, 0+65, 160, 55, 8)
+    if(life == 3){
+        image(imageHeartFull, width/2-50, 0+65, 50, 50)
+        image(imageHeartFull, width/2, 0+65, 50, 50)
+        image(imageHeartFull, width/2+50, 0+65, 50, 50)
+    }else if(life == 2){
+        image(imageHeartFull, width/2-50, 0+65, 50, 50)
+        image(imageHeartFull, width/2, 0+65, 50, 50)
+        image(imageHeartEmpty, width/2+50, 0+65, 50, 50)
+    }else if(life == 1){
+        image(imageHeartFull, width/2-50, 0+65, 50, 50)
+        image(imageHeartEmpty, width/2, 0+65, 50, 50)
+        image(imageHeartEmpty, width/2+50, 0+65, 50, 50)
+    }
 
     
 
