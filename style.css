@@ -1,23 +1,86 @@
-html {
-  font-size: 100%;
-} /*16px*/
+html,body{
+    height: 100%;
+    margin: 0;
+}
+body{
+    background-color: rgb(231, 241, 243);
+}
 
-body {
-  background-color: white;
-  display: flex;
-  margin: 0 0;
-  color: #1d2429;
+.p2{
+    font-family: Helvetica;
 }
-/*
- see A Complete Guide to Flexbox
-  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
- */
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+
+.bg{
+    background-image: url("assets/Sketches2.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    }
+
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    max-height: 70%;
+    max-width: 60%;
+    
 }
-.flex-item {
-  align-self: center;
-}
+.button1con {
+    position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  padding: 5px 15%;
+  margin-top:50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  text-align: center;
+  transition-duration: 0.4s;
+  }
+  .button1 {
+    background-color: rgba(21, 93, 134, 0.637); 
+    color: #ffdba6; 
+    border: 2px solid #ff9900;
+    border-radius: 2px 70px;
+  }
+  
+  .button1:hover {
+    background-color: #ff9900;
+    color: white;
+  }
+
+  .button2con {
+    position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  padding: 2px 5%;
+  margin-top:100px;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  text-align: center;
+  transition-duration: 0.4s;
+  }
+
+  .button2 {
+    background-color: rgba(21, 93, 134, 0.637); 
+    color: #ffdba6; 
+    border: 2px solid #ff9900;
+    border-radius: 2px 70px;
+  }
+  
+  .button2:hover {
+    background-color: #ff9900;
+    color: white;
+  }
+
+  .playbutton{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
